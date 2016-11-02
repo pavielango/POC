@@ -316,9 +316,12 @@ func (t *SimpleChaincode) init_marble(stub *shim.ChaincodeStub, args []string) (
 	fmt.Println("! marble index: ", marbleIndex)
 	jsonAsBytes, _ := json.Marshal(marbleIndex)
 	err = stub.PutState(marbleIndexStr, jsonAsBytes)						//store name of marble
-
+        valAsbytes, err := stub.GetState(name) 
+	
 	fmt.Println("- end init marble")
-	return nil, nil
+	//return nil, nil
+	
+	return valAsbytes, nil 
 }
 
 // ============================================================================================================================
