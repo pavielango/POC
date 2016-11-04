@@ -30,7 +30,7 @@ import (
 type SimpleChaincode struct {
 }
 
-var customIndexStr = "_customerindex"				//name for the key/value that will store a list of all known customers
+var customIndexStr = "_marbleindex"				//name for the key/value that will store a list of all known customers
 
 type Customer struct{
 	Nino string `json:"nino"`					//the fieldtags are needed to keep case from bouncing around
