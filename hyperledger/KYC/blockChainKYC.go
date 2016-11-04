@@ -235,28 +235,8 @@ func (t *SimpleChaincode) init_customer(stub *shim.ChaincodeStub, args []string)
 	//}
 
 	fmt.Println("- start init customer")
-	
-	
-	
-	 var params = [
-                            {key: 'nino',       val: nino}, 
-                            {key: 'title',      val: title}, 
-                            {key: 'firstname',  val: firstName}, 
-                            {key: 'middlename', val: middleName}, 
-                            {key: 'lastname',   val: lastName}, 
-                            {key: 'dob',    	val: dob}, 
-                            {key: 'gender',    	val: sex}, 
-                            {key: 'RS',     	val: relationshipStatus}, 
-                            {key: 'address',    val: address}, 
-                            {key: 'email',     	val: email}, 
-                            {key: 'landline',   val: landline}, 
-                            {key: 'mobile',     val: mobile}, 
-                            {key: 'PC',     	val: preferredContact},
-                            {key: 'ppnum',    	val: passport},
-                            {key: 'dlnum',    	val: drivingLicence}
-                        ];
-	
-	str := `{"nino": "` + args[0] + `", "title": "` + agrs[1] + `", "firstname": ` + args[2] + `, "middlename": "` + args[3] + `" ,"lastname": ` + args[4] + `,"dob": ` + args[5] + `, "gender": ` + args[5] + `, "rs": ` + args[6] + `,"address": ` + args[7] + `,"email": ` + args[8] + `, "landline": ` + args[9] + `, "mobile": ` + args[10] + `, "PC": ` + args[11] + `, "ppnum": ` + args[12] + `, "dlnum": ` + args[13]+' }`
+		
+	str := `{"nino": "` + args[0] + `", "title": "` + agrs[1] + `", "firstname": ` + args[2] + `, "middlename": "` + args[3] + `" ,"lastname": ` + args[4] + `,"dob": ` + args[5] + `, "gender": ` + args[6] + `, "rs": ` + args[7] + `,"address": ` + args[8] + `,"email": ` + args[9] + `, "landline": ` + args[10] + `, "mobile": ` + args[11] + `, "PC": ` + args[12] + `, "ppnum": ` + args[13] + `, "dlnum": ` + args[14]+' }`
 	err = stub.PutState(args[0], []byte(str))								//store marble with id as key
 	if err != nil {
 		return nil, err
