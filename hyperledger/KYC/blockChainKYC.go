@@ -171,7 +171,7 @@ func (t *SimpleChaincode) Delete(stub *shim.ChaincodeStub, args []string) ([]byt
 	}
 	
 	name := args[0]
-	err := stub.DelState(nino)													//remove the key from chaincode state
+	err := stub.DelState(name)													//remove the key from chaincode state
 	if err != nil {
 		return nil, errors.New("Failed to delete state")
 	}
