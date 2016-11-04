@@ -236,7 +236,7 @@ func (t *SimpleChaincode) init_customer(stub *shim.ChaincodeStub, args []string)
 
 	fmt.Println("- start init customer")
 		
-	str := `{"nino": "` + args[0] + `", "title": "` + agrs[1] + `", "firstname": "` + args[2] + `", "middlename": "` + args[3] + `" ,"lastname": "` + args[4] + `","dob": "` + args[5] + `", "gender": "` + args[6] + `", "rs": "` + args[7] + `","address": "` + args[8] + `","email": "` + args[9] + `", "landline": "` + args[10] + `", "mobile": "` + args[11] + `", "PC": "` + args[12] + `", "ppnum": "` + args[13] + `", "dlnum": "` + args[14]+`" }`
+	str := `{"nino": "` + args[0] + `", "title": "` + args[1] + `", "firstname": "` + args[2] + `", "middlename": "` + args[3] + `" ,"lastname": "` + args[4] + `","dob": "` + args[5] + `", "gender": "` + args[6] + `", "rs": "` + args[7] + `","address": "` + args[8] + `","email": "` + args[9] + `", "landline": "` + args[10] + `", "mobile": "` + args[11] + `", "PC": "` + args[12] + `", "ppnum": "` + args[13] + `", "dlnum": "` + args[14]+`" }`
 	err = stub.PutState(args[0], []byte(str))								//store marble with id as key
 	if err != nil {
 		return nil, err
