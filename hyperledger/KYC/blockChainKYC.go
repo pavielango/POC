@@ -152,7 +152,7 @@ func (t *SimpleChaincode) read(stub *shim.ChaincodeStub, args []string) ([]byte,
 		return nil, errors.New("Incorrect number of arguments. Expecting name of the var to query")
 	}
 
-	nino = args[0]
+	name = args[0]
 	valAsbytes, err := stub.GetState(name)									//get the var from chaincode state
 	if err != nil {
 		jsonResp = "{\"Error\":\"Failed to get state for " + name + "\"}"
