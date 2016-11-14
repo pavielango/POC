@@ -662,7 +662,7 @@ func cleanTrades(stub *shim.ChaincodeStub)(err error){
 // Create  - create tables - chaincode state
 // ============================================================================================================================
 func (t *SimpleChaincode) createTable(stub *shim.ChaincodeStub, args []string) (error) {
-	var name, value string // Entities
+	var tableName, value string // Entities
 	var err error
 	fmt.Println("running createTable()")
 
