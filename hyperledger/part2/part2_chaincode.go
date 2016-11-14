@@ -147,6 +147,8 @@ func (t *SimpleChaincode) Invoke(stub *shim.ChaincodeStub, function string, args
 		return res, err
 	} else if function == "remove_trade" {									//cancel an open trade order
 		return t.remove_trade(stub, args)
+	} else if function == "createTable" {									//cancel an open trade order
+		return t.createTable(stub, args)
 	}
 	fmt.Println("invoke did not find func: " + function)					//error
 
@@ -654,3 +656,23 @@ func cleanTrades(stub *shim.ChaincodeStub)(err error){
 	fmt.Println("- end clean trades")
 	return nil
 }
+
+
+// ============================================================================================================================
+// Create  - create tables - chaincode state
+// ============================================================================================================================
+func (t *SimpleChaincode) createTable(stub *shim.ChaincodeStub, args []string) (error) {
+	var name, value string // Entities
+	var err error
+	fmt.Println("running createTable()")
+
+	
+	tableName = args[0]															//rename for funsies
+	
+	err = stub.CreateTable(tableName, args)								//write the variable into the chaincode state
+	if err != nil {
+		return  err
+	}
+	return nil
+}
+
